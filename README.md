@@ -1,5 +1,7 @@
-# ![logo.png](docs/logo.png) Easy Icons
+# Easy Icons
 Easy Icons is a simple and fast tool for copying ready-to-use SVG icon snippets. Perfect for websites, projects, and documentation.
+
+<img src="logo.png" width="128" alt="Logo">
 
 ## 🚀 How to Use
 1. Visit the Easy Icons website.
