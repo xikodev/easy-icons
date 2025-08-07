@@ -54,11 +54,7 @@ section {
     justify-content: space-evenly;
 }
 
-section a {
-    width: fit-content;
-    margin: 0.5em;
-}
-
 img {
     width: 64px;
+    margin: 0.5em;
 }
