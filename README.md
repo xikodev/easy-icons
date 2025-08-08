@@ -4,7 +4,7 @@ Easy Icons is a simple and fast tool for copying ready-to-use SVG icon snippets.
 <img src="logo.png" width="128" alt="Logo">
 
 ## 🚀 How to Use
-1. Visit the Easy Icons website.
+1. Visit the (Easy Icons website)[https://easyicons.xyz].
 2. Browse and click on any icon you like.
 3. The corresponding HTML snippet will be automatically copied to your clipboard.
 4. Paste it directly into your code — and you're done!
