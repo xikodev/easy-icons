@@ -44,6 +44,7 @@ input:focus {
 }
 
 h1 {
+    margin-top: 3em;
     display: flex;
     align-items: center;
 }
@@ -77,12 +78,13 @@ main a:hover {
 
 main div#alert {
     width: calc(100% + 2em);
+    position: fixed;
     background-color: #91ff69;
     opacity: 0;
 }
 
 main div#alert p {
-    margin: 1em;
+    margin: 1em 2em;
 }
 
 footer {
@@ -92,12 +94,14 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     margin-top: auto;
 }
 
 footer a {
     text-decoration: none;
     max-width: 220px;
+    margin: 0 0.5em;
     color: #fff;
     display: flex;
     justify-content: center;

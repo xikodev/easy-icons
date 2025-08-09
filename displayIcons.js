@@ -53,8 +53,8 @@ function showAlert(icon) {
                 clearInterval(fadeOut);
             }
             alertDiv.style.opacity = opacity.toString();
-        }, 50);
-    }, 1000);
+        }, 100);
+    }, 1500);
 }
 
 function getAltText(filename) {
