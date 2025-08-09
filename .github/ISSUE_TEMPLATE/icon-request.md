@@ -1,10 +1,10 @@
 ---
 name: Icon request
 about: Request an icon to be added
-title: ''
-labels: ''
-assignees: ''
+title: ICON REQUEST
+labels: enhancement
+assignees: xikodev
 
 ---
 
-List all the icons you would like to be added on Easy Icons!
+**Please list all the icons you would like to be added on Easy Icons below this!**
