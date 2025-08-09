@@ -16,7 +16,7 @@ body {
 }
 
 main {
-    margin: 5% 0 0;
+    margin: 0 1em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +29,7 @@ input {
     padding: 1em 1.5em;
     box-shadow: -5px 5px 5px 0 rgba(0,0,0,0.75);
     margin: 2em;
-    transition: all 0.3s
+    transition: all 0.3s;
 }
 
 input:hover {
@@ -48,11 +48,6 @@ h1 {
     align-items: center;
 }
 
-a {
-    color: #000;
-    text-decoration: none;
-}
-
 section {
     margin: 0 0 3em;
     display: flex;
@@ -65,7 +60,33 @@ img {
     margin: 0.5em;
 }
 
+main a {
+    background-color: #fff;
+    padding: 1.5em 1.5em;
+    border-radius: 1em;
+    box-shadow: -5px 5px 5px 0 rgba(0,0,0,0.75);
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-bottom: 3em;
+}
+
+main a:hover {
+    padding: 1.5em 2em;
+}
+
+main div#alert {
+    width: calc(100% + 2em);
+    background-color: #91ff69;
+    opacity: 0;
+}
+
+main div#alert p {
+    margin: 1em;
+}
+
 footer {
+    background-color: #252A39;
     width: calc(100% - 6em);
     padding: 3em;
     display: flex;
@@ -75,6 +96,9 @@ footer {
 }
 
 footer a {
+    text-decoration: none;
+    max-width: 220px;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;

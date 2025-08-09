@@ -12,7 +12,9 @@ Easy Icons is a simple and fast tool for copying ready-to-use SVG icon snippets.
 ## 📋 Example Output
 Clicking an icon will copy something like this:
 ```html
-<img src="https://easyicons.xyz/icons/Github-Dark.svg" alt="GitHub" width="48">
+<a href="https://easyicons.xyz/" target="_blank">
+    <img src="https://easyicons.xyz/icons/Github-Dark.svg" alt="GitHub" width="48">
+</a>
 ```
 
 ## 💡 Why Use Easy Icons?

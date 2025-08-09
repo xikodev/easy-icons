@@ -21,7 +21,7 @@ function renderIcons(iconList) {
 
         const fullURL = `https://easyicons.xyz/icons/${filename}`;
         const altText = getAltText(filename);
-        const htmlSnippet = `<img src="${fullURL}" alt="${altText}" width="48px">`;
+        const htmlSnippet = `<a href="https://easyicons.xyz/" target="_blank"><img src="${fullURL}" alt="${altText}" width="48px"></a>`;
 
         img.src = fullURL;
         img.alt = altText;
@@ -30,12 +30,31 @@ function renderIcons(iconList) {
 
         img.onclick = () => {
             navigator.clipboard.writeText(htmlSnippet)
-                .then(() => alert(`Copied:\n${htmlSnippet}`))
+                .then(() => showAlert(altText))
                 .catch(err => console.error("Copy failed:", err));
         };
 
         iconSection.appendChild(img);
     });
+}
+
+function showAlert(icon) {
+    const alertDiv = document.querySelector("#alert");
+    let opacity = 1.0;
+
+    alertDiv.innerHTML = `<p>${icon} icon HTML copied to clipboard!</p>`;
+    alertDiv.style.opacity = opacity.toString();
+
+    setTimeout(() => {
+        const fadeOut = setInterval(() => {
+            opacity -= 0.1;
+            if (opacity <= 0) {
+                opacity = 0;
+                clearInterval(fadeOut);
+            }
+            alertDiv.style.opacity = opacity.toString();
+        }, 50);
+    }, 1000);
 }
 
 function getAltText(filename) {
