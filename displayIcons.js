@@ -1,3 +1,24 @@
+const themeToggle = document.getElementById('themeToggle');
+const currentTheme = sessionStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeToggle.textContent = currentTheme === 'dark' ? '⚫ Browse dark icons' : '⚪ Browse light icons';
+}
+
+themeToggle.addEventListener('click', () => {
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    sessionStorage.setItem('theme', theme);
+    themeToggle.textContent = theme === 'dark' ? '⚫ Browse dark icons' : '⚪ Browse light icons';
+
+    const query = document.getElementById('iconSearch').value.toLowerCase();
+    const filteredIcons = allIcons.filter(filename =>
+        filename.toLowerCase().includes(query) && !filename.toLowerCase().includes(theme)
+    );
+    renderIcons(filteredIcons);
+});
+
 let allIcons = [];
 
 fetch('icons.json')
@@ -6,11 +27,15 @@ fetch('icons.json')
         allIcons = files.filter(filename =>
             filename.endsWith('.svg')
         );
-        renderIcons(allIcons);
+        const filteredIcons = allIcons.filter(filename =>
+            !filename.toLowerCase().includes(currentTheme)
+        );
+        renderIcons(filteredIcons);
     })
     .catch(error => {
         console.error('Failed to load icon list:', error);
     });
+
 
 function renderIcons(iconList) {
     const iconSection = document.querySelector("section");
@@ -70,7 +95,7 @@ function getAltText(filename) {
 document.getElementById('iconSearch').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
     const filteredIcons = allIcons.filter(filename =>
-        filename.toLowerCase().includes(query)
+        filename.toLowerCase().includes(query) && !filename.toLowerCase().includes(currentTheme)
     );
     renderIcons(filteredIcons);
 });

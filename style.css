@@ -1,9 +1,20 @@
+:root {
+    --bg-color: #F8F1E5;
+    --text-color: #000;
+}
+
+[data-theme="dark"] {
+    --bg-color: #252A39;
+    --text-color: #fff;
+}
+
 html {
     height: 100vh;
 }
 
 body {
-    background-color: #F8F1E5;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
     font-family: Verdana, sans-serif;
     font-size: 1em;
@@ -13,6 +24,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 main {
@@ -22,7 +34,15 @@ main {
     align-items: center;
 }
 
-input {
+button {
+    cursor: pointer;
+}
+
+label {
+    pointer-events: none;
+}
+
+input, button {
     background-color: #fff;
     border-radius: 1em;
     border: none;
@@ -32,7 +52,7 @@ input {
     transition: all 0.3s;
 }
 
-input:hover {
+input:hover, button:hover {
     padding: 1em 2em;
 }
 
