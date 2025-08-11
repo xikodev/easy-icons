@@ -1,10 +1,6 @@
 const themeToggle = document.getElementById('themeToggle');
-const currentTheme = sessionStorage.getItem('theme');
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    themeToggle.textContent = currentTheme === 'dark' ? '⚫ Browse dark icons' : '⚪ Browse light icons';
-}
+const currentTheme = 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
 
 themeToggle.addEventListener('click', () => {
     const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
